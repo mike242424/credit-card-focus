@@ -1,20 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { TextInput } from 'react-native';
+import { style } from './App.style';
 
-export default function App() {
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaProvider>
+      <SafeAreaView style={style.container}>
+        <TextInput style={style.text} placeholder="Card Number" />
+        <TextInput style={style.text} placeholder="Secret Code" />
+        <TextInput style={style.text} placeholder="Expiration Date" />
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
