@@ -13,6 +13,12 @@ const App = () => {
     }
   }
 
+  function onSecretNumberChange(text) {
+    if (text.length > 3) {
+      expirationDateRef.current.focus();
+    }
+  }
+
   return (
     <SafeAreaProvider>
       <SafeAreaView style={style.container}>
@@ -25,6 +31,7 @@ const App = () => {
           ref={secretCodeRef}
           style={style.text}
           placeholder="Secret Code"
+          onChangeText={onSecretNumberChange}
         />
         <TextInput
           ref={expirationDateRef}
