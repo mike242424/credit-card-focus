@@ -7,6 +7,6 @@ export const style = StyleSheet.create({
     alignItems: 'center',
   },
   text: {
-    fontSize: 25,
+    fontSize: 30,
   },
 });
